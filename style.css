@@ -38,12 +38,14 @@
   padding: 20px 0px;
 }
 
-.tasks-list {
+.tasks-list_completed,
+.tasks-list_incomplete {
   margin: 0;
   padding: 0px;
 }
 
-.tasks-list__item {
+.tasks-list__item,
+.tasks-list__item_edit {
   list-style:none;
   overflow: hidden;
   padding: 20px 0;
@@ -102,7 +104,7 @@ button{
   color: #333;
 }
 
-.new-task {
+.task-row__input {
   display: inline-block;
   width: 318px;
 }
@@ -130,16 +132,16 @@ button{
   transform: rotateZ(0);
 }
 
-.completed .task {
+.tasks-list_completed .task {
   text-decoration: line-through;
   color: #888;
 }
 
-.edit-mode .text-input {
+.tasks-list__item_edit .text-input {
   display: inline-block;
   width: 224px;
 }
 
-.edit-mode .task {
+.tasks-list__item_edit .task {
   display: none;
 }

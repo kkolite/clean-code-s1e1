@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.querySelector(".new-task");//Add a new task.
+var taskInput=document.querySelector(".task-row__input");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteTaskHolder=document.querySelector(".incomplete");//ul of #incompleteTasks
-var completedTasksHolder=document.querySelector(".completed");//completed-tasks
+var incompleteTaskHolder=document.querySelector(".tasks-list_incomplete");//ul of #incompleteTasks
+var completedTasksHolder=document.querySelector(".tasks-list_completed");//completed-tasks
 
 
 //New task list item
@@ -89,7 +89,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('.text-input');
     var label=listItem.querySelector(".task");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
+    var containsClass=listItem.classList.contains("tasks-list__item_edit");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -97,9 +97,13 @@ var editTask=function(){
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
+        listItem.classList.remove("tasks-list__item_edit");
+        listItem.classList.add("tasks-list__item");
     }else{
         editInput.value=label.innerText;
         editBtn.innerText="Save";
+        listItem.classList.add("tasks-list__item_edit");
+        listItem.classList.remove("tasks-list__item");
     }
 
     //toggle .editmode on the parent.
