@@ -98,12 +98,12 @@ var editTask=function(){
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
         listItem.classList.remove("tasks__item_edit");
-        listItem.classList.add("tasks__item");
+        //listItem.classList.add("tasks__item");
     }else{
         editInput.value=label.innerText;
         editBtn.innerText="Save";
         listItem.classList.add("tasks__item_edit");
-        listItem.classList.remove("tasks__item");
+       // listItem.classList.remove("tasks__item");
     }
 };
 
